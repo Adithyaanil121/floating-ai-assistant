@@ -1,8 +1,12 @@
 # Floating AI Assistant
 
+![Demo](assets/demo.gif)
+
 A Python-based desktop widget that floats above your other windows, allowing you to quickly extract text from any application on your screen, have it explained or translated by a local Large Language Model (LLM), and read aloud to you using Text-to-Speech (TTS).
 
 ## Features
+
+![Screenshot](assets/screenshot.png)
 
 - **Always-on-top Floating Widget**: A non-intrusive, Mobizen-like floating button ("M") that stays on top of other windows. You can drag it anywhere on your screen.
 - **Screen Text Extraction**: Quickly copies selected text from any active window using automated keyboard shortcuts (`Ctrl+C`).
@@ -47,7 +51,8 @@ To run this application, you must have the following installed on your system:
 
 ## Project Structure
 
-- `main.py`: The entry point and PyQT6 user interface containing the `FloatingWidget` class.
-- `llm_service.py`: Handles communication with the local Ollama instance, managing prompts, and conversation history.
-- `text_extractor.py`: Manages the automated text extraction by simulating `Ctrl+C` and reading the clipboard using `pyautogui` and `pyperclip`.
-- `tts_service.py`: Provides the asynchronous text-to-speech functionality using `pyttsx3`.
+- `main.py`: The entry point and PyQT6 user interface containing the runner.
+- `ui/floating_widget.py`: The PyQT6 user interface containing the `FloatingWidget` class.
+- `core/llm_service.py`: Handles communication with the local Ollama instance, managing prompts, and conversation history.
+- `core/text_extractor.py`: Manages the automated text extraction by simulating `Ctrl+C` and reading the clipboard using `pyautogui` and `pyperclip`.
+- `core/tts_service.py`: Provides the asynchronous text-to-speech functionality using `pyttsx3`.
