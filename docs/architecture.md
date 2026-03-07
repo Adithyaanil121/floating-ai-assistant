@@ -33,7 +33,7 @@ floating-ai-assistant
 - **UI Layer (`ui/floating_widget.py`)**: Built with PyQt6, providing a frameless, transparent widget that stays always on top. It includes custom drag-and-drop mechanics to ensure a smooth desktop experience. The widget operates independently of the services, sending events when buttons are clicked.
 
 ### 2. Service Layer
-- **Large Language Model Service (`core/llm_service.py`)**: Responsible for handling prompts and sending API requests to the local Ollama instance (`llama3.2:3b`). Contains separate prompt chains for code explanation and general translation.
+- **Large Language Model Service (`core/llm_service.py`)**: Handles smart model routing — uses `llama3:8b` for plain English explanations, and `qwen2.5:7b` for language/idiom detection, translation, and idiom explanation. Manages prompts, conversation history, and follow-up questions.
 - **Text Extractor (`core/text_extractor.py`)**: Automates the pressing of `Ctrl+C` via `pyautogui` and reads the target window's content from the clipboard through `pyperclip`.
 - **Text-to-Speech (`core/tts_service.py`)**: Utilizes `pyttsx3` to execute non-blocking read-aloud features so the user can listen to explanations without UI freezing.
 

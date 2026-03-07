@@ -1,7 +1,5 @@
 # Floating AI Assistant
 
-![Demo](assets/demo.gif)
-
 A Python-based desktop widget that floats above your other windows, allowing you to quickly extract text from any application on your screen, have it explained or translated by a local Large Language Model (LLM), and read aloud to you using Text-to-Speech (TTS).
 
 ## Features
@@ -10,9 +8,12 @@ A Python-based desktop widget that floats above your other windows, allowing you
 
 - **Always-on-top Floating Widget**: A non-intrusive, Mobizen-like floating button ("M") that stays on top of other windows. You can drag it anywhere on your screen.
 - **Screen Text Extraction**: Quickly copies selected text from any active window using automated keyboard shortcuts (`Ctrl+C`).
-- **Explain Text**: AI explains complex text in simple English.
+- **Smart Explain**: AI automatically detects language and idioms, then routes to the best model:
+  - Plain English → explained with `llama3:8b`
+  - English with idioms → idiom detection and explanation with `qwen2.5:7b`
+  - Non-English → translated and explained with `qwen2.5:7b`
 - **Translate Text**: AI detects the language of the selected text, translates it into English, and explains any regional idioms or cultural nuances.
-- **Local AI Processing**: Uses [Ollama](https://ollama.com/) to process text completely locally for privacy and speed. Defaults to the `llama3.2:3b` model.
+- **Local AI Processing**: Uses [Ollama](https://ollama.com/) to process text completely locally for privacy and speed. Uses `llama3:8b` for explanations and `qwen2.5:7b` for language/idiom detection and translation.
 - **Text-to-Speech (TTS)**: Reads out the AI's response using your system's default text-to-speech engine.
 - **Follow-up Chat**: Features a built-in chat interface, allowing you to ask follow-up questions to the AI about the extracted text.
 
@@ -29,11 +30,12 @@ To run this application, you must have the following installed on your system:
    ```bash
    pip install -r requirements.txt
    ```
-3. Pull the required language model through Ollama (this is a one-time setup):
+3. Pull the required language models through Ollama (this is a one-time setup):
    ```bash
-   ollama pull llama3.2:3b
+   ollama pull llama3:8b
+   ollama pull qwen2.5:7b
    ```
-   *(You can change the `MODEL` variable in `llm_service.py` if you prefer to use a different local model).*
+   *(You can change the `MODEL_EXPLAIN` and `MODEL_DETECT` variables in `core/llm_service.py` if you prefer to use different local models).*
 
 ## Usage
 
