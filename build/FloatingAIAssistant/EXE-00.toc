@@ -94,7 +94,7 @@
  [],
  False,
  False,
- 1772863023,
+ 1772863340,
  [('runw.exe',
    'C:\\Users\\Victus\\Desktop\\New '
    'folder\\venv\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\runw.exe',

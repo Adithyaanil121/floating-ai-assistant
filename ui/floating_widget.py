@@ -456,13 +456,11 @@ class FloatingWidget(QWidget):
                     
             elif event.type() == QEvent.Type.Enter:
                 self._is_hovered = True
-                self.animate_glow(True)
                 self.update_opacity()
                 return False
                 
             elif event.type() == QEvent.Type.Leave:
                 self._is_hovered = False
-                self.animate_glow(False)
                 self.update_opacity()
                 return False
                     
@@ -479,9 +477,11 @@ class FloatingWidget(QWidget):
         self._opacity_anim.stop()
         self._opacity_anim.setEndValue(target)
         self._opacity_anim.start()
+        
+        self.animate_glow()
 
-    def animate_glow(self, hover):
-        """Animates the toggle button's shadow and cornea into a neon blue aura on hover."""
+    def animate_glow(self):
+        """Animates the toggle button's shadow and cornea into a neon blue aura."""
         if not hasattr(self, '_glow_color_anim'):
             self._glow_color_anim = QPropertyAnimation(self._toggle_shadow, b"color")
             self._glow_color_anim.setDuration(800)
@@ -498,7 +498,8 @@ class FloatingWidget(QWidget):
         self._eye_openness_anim.stop()
         self._eye_glow_anim.stop()
         
-        if hover:
+        is_active = self.expanded or self._response_visible or self._is_hovered
+        if is_active:
             # Glowy neon blue aura, open the eyelids, and fade in the blue pupil
             self._glow_color_anim.setEndValue(QColor(0, 240, 255, 255))
             self._eye_openness_anim.setEndValue(1.0)
