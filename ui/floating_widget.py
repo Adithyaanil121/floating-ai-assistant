@@ -162,7 +162,7 @@ class FloatingWidget(QWidget):
         self.eye_overlay.setGeometry(6, 6, 28, 28)
         
         self.toggle_btn.setCursor(Qt.CursorShape.PointingHandCursor)
-        self.toggle_btn.setFont(QFont("Segoe UI", 14))
+        self.toggle_btn.setFont(QFont("Inter", 14) if sys.platform != "win32" else QFont("Segoe UI", 14))
         self.set_inactive_style()
         
         # Glow shadow on toggle button
@@ -246,7 +246,7 @@ class FloatingWidget(QWidget):
         self.response_panel.setReadOnly(True)
         self.response_panel.setMaximumHeight(200)
         self.response_panel.setMinimumHeight(80)
-        self.response_panel.setFont(QFont("Segoe UI", 11))
+        self.response_panel.setFont(QFont("Inter", 11) if sys.platform != "win32" else QFont("Segoe UI", 11))
         self.response_panel.setStyleSheet(f"""
             QTextEdit {{
                 background-color: {COLORS['surface']};
@@ -281,7 +281,7 @@ class FloatingWidget(QWidget):
         
         self.chat_input = QLineEdit()
         self.chat_input.setPlaceholderText("Ask a follow-up...")
-        self.chat_input.setFont(QFont("Segoe UI", 11))
+        self.chat_input.setFont(QFont("Inter", 11) if sys.platform != "win32" else QFont("Segoe UI", 11))
         self.chat_input.setStyleSheet(f"""
             QLineEdit {{
                 background-color: {COLORS['surface']};

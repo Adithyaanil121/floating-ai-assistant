@@ -21,8 +21,13 @@ if __name__ == '__main__':
         QApplication.setAttribute(Qt.ApplicationAttribute.AA_UseHighDpiPixmaps, True)
     
     # Required to make PyAutoGUI hotkeys work across apps correctly on windows
-    myappid = 'mycompany.myproduct.subproduct.version' # arbitrary string
-    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+    if sys.platform == 'win32':
+        try:
+            import ctypes
+            myappid = 'mycompany.myproduct.floatingassistant.v1'
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+        except Exception as e:
+            print(f"Windows Shell ID error: {e}")
 
     app = QApplication(sys.argv)
     

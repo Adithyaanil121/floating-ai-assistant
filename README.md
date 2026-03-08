@@ -22,6 +22,8 @@ A Python-based desktop widget that floats above your other windows, allowing you
 To run this application, you must have the following installed on your system:
 - **Python 3.x**
 - **Ollama**: Download and install from [ollama.com](https://ollama.com/).
+- **Linux Users**: Install `libespeak1` for Text-to-Speech support: `sudo apt-get install libespeak1`.
+- **macOS Users**: Grant **Accessibility** and **Screen Recording** permissions to your terminal/IDE in *System Settings > Privacy & Security* to allow text extraction.
 
 ## Installation
 

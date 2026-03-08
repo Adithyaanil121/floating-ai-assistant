@@ -1,6 +1,7 @@
 import pyautogui
 import pyperclip
 import time
+import sys
 
 def extract_text():
     """
@@ -20,8 +21,9 @@ def extract_text():
         # Give a tiny delay to ensure the OS has registered our widget hiding
         time.sleep(0.2)
 
-        # Simulate Ctrl+C
-        pyautogui.hotkey('ctrl', 'c')
+        # Simulate Copy (Ctrl+C on Windows/Linux, Command+C on Mac)
+        modifier = 'command' if sys.platform == 'darwin' else 'ctrl'
+        pyautogui.hotkey(modifier, 'c')
         
         # Wait a bit for the clipboard to update
         time.sleep(0.1)
