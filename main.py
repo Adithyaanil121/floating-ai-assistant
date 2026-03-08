@@ -74,8 +74,4 @@ if __name__ == '__main__':
     tray_icon.activated.connect(on_tray_activated)
     tray_icon.show()
     
-    # For multiprocessing support on Windows (pyttsx3 in isolated processes)
-    import multiprocessing
-    multiprocessing.freeze_support()
-    
     sys.exit(app.exec())

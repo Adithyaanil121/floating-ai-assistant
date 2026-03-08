@@ -1,4 +1,4 @@
-import tts_service
+from core import tts_service
 import time
 
 print("Testing TTS module...")

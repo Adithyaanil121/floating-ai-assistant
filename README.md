@@ -8,7 +8,7 @@ A Python-based desktop widget that floats above your other windows, allowing you
 
 - **Always-on-top Floating Widget**: A non-intrusive, Mobizen-like floating button ("M") that stays on top of other windows. You can drag it anywhere on your screen.
 - **Screen Text Extraction**: Quickly copies selected text from any active window using automated keyboard shortcuts (`Ctrl+C`).
-- **Smart Explain**: AI automatically detects language and idioms, then routes to the best model:
+- **Smart Explain**: AI automatically detects language and idioms, then routes to the best model, acting as a helpful teacher providing simple and relatable examples:
   - Plain English → explained with `llama3:8b`
   - English with idioms → idiom detection and explanation with `qwen2.5:7b`
   - Non-English → translated and explained with `qwen2.5:7b`

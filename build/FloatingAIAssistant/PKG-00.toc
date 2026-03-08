@@ -46,6 +46,10 @@
    'C:\\Users\\Victus\\Desktop\\New '
    'folder\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgutil.py',
    'PYSOURCE'),
+  ('pyi_rth_multiprocessing',
+   'C:\\Users\\Victus\\Desktop\\New '
+   'folder\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_multiprocessing.py',
+   'PYSOURCE'),
   ('pyi_rth__tkinter',
    'C:\\Users\\Victus\\Desktop\\New '
    'folder\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth__tkinter.py',
@@ -57,10 +61,6 @@
   ('pyi_rth_pywintypes',
    'C:\\Users\\Victus\\Desktop\\New '
    'folder\\venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\rthooks\\pyi_rth_pywintypes.py',
-   'PYSOURCE'),
-  ('pyi_rth_multiprocessing',
-   'C:\\Users\\Victus\\Desktop\\New '
-   'folder\\venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_multiprocessing.py',
    'PYSOURCE'),
   ('pyi_rth_pyqt6',
    'C:\\Users\\Victus\\Desktop\\New '

@@ -56,7 +56,7 @@ def explain_text(text):
     """Explain English text using Llama 3."""
     global conversation_history, _last_model
 
-    prompt = f"""You are a helpful assistant. Please explain the following text in simple English. Keep it concise but informative.
+    prompt = f"""You are a helpful teacher. Please explain the following text in simple English so that a student can easily understand. Provide easy-to-relate examples. Keep it concise but educational.
     
 Text to explain:
 \"{text}\""""
